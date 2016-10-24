@@ -1,0 +1,2 @@
+#%PAM-1.0
+auth required pam_u2f.so authfile=/etc/u2f_mappings {% if u2f_sudo_cue %} cue {% endif %}{% if u2f_sudo_interactive %} interactive {% endif %}

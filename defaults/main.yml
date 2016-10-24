@@ -1,0 +1,16 @@
+---
+u2f_sudo_cue: true
+u2f_sudo_interactive: true
+
+# Mappings should be defined as follows
+#
+# sudo_u2f_mappings:
+#   user1:
+#     username: username1
+#     keyhandle: longStringOne
+#     userkey: longStringTwo
+#
+# Where user1 is the friendly name of the user, username1 is the user account
+# on the machine itself, and longStringOne and longStringTwo are obtained by
+# running `sudo pamu2fcfg -n` and given in the format:
+# :longStringOne,longStringTwo

@@ -1,0 +1,5 @@
+{% if sudo_u2f_mappings is defined %}
+{% for mapping in sudo_u2f_mappings %}
+{{ sudo_u2f_mappings[mapping].username }}:{{ sudo_u2f_mappings[mapping].keyhandle }},{{ sudo_u2f_mappings[mapping].userkey }}
+{% endfor %}
+{% endif %}

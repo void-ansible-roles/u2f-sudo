@@ -1,0 +1,13 @@
+---
+- name: Install dependencies
+  xbps: name={{ item }} state=present
+  with_items:
+    - libu2f-host
+    - libu2f-server
+    - pam-u2f
+
+- name: Install u2f mappings file
+  template: src=u2f_mappings dest=/etc/u2f_mappings owner=root group=root mode=0644
+
+- name: Install sudo pam config
+  template: src=sudo dest=/etc/pam.d/sudo owner=root group=root mode=0644
