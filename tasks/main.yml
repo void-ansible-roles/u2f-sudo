@@ -11,3 +11,7 @@
 
 - name: Install sudo pam config
   template: src=sudo dest=/etc/pam.d/sudo owner=root group=root mode=0644
+
+- name: Set sudo timestamp timeout
+  template: src=timeout dest=/etc/sudoers.d/timeout owner=root group=root mode=0644
+  when: u2f_sudo_timestamp_timeout is defined

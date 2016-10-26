@@ -3,6 +3,8 @@ u2f_sudo_cue: true
 u2f_sudo_interactive: true
 u2f_sudo_allow_password: true
 
+# u2f_sudo_timestamp_timeout: 15
+#
 # Mappings should be defined as follows
 #
 # sudo_u2f_mappings:

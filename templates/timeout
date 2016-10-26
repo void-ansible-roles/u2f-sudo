@@ -1,0 +1,1 @@
+Defaults timestamp_timeout={{ u2f_sudo_timestamp_timeout }}
