@@ -1,17 +1,33 @@
 ---
 - name: Install dependencies
-  xbps: name={{ item }} state=present
-  with_items:
-    - libu2f-host
-    - libu2f-server
-    - pam-u2f
+  xbps:
+    pkg:
+      - libu2f-host
+      - libu2f-server
+      - pam-u2f
+    state: present
 
 - name: Install u2f mappings file
-  template: src=u2f_mappings dest=/etc/u2f_mappings owner=root group=root mode=0644
+  template:
+    src: u2f_mappings
+    dest: /etc/u2f_mappings
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Install sudo pam config
-  template: src=sudo dest=/etc/pam.d/sudo owner=root group=root mode=0644
+  template:
+    src: sudo
+    dest: /etc/pam.d/sudo
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Set sudo timestamp timeout
-  template: src=timeout dest=/etc/sudoers.d/timeout owner=root group=root mode=0644
+  template:
+    src: timeout
+    dest: /etc/sudoers.d/timeout
+    owner: root
+    group: root
+    mode: 0644
   when: u2f_sudo_timestamp_timeout is defined

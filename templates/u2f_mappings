@@ -1,6 +1,3 @@
-{% if sudo_u2f_mappings is defined %}
-{% for user in sudo_u2f_mappings %}
-{{ sudo_u2f_mappings[user].username }}{% for u2fkey in sudo_u2f_mappings[user].u2fkeys %}:{{ sudo_u2f_mappings[user]['u2fkeys'][u2fkey].keyhandle }},{{ sudo_u2f_mappings[user]['u2fkeys'][u2fkey].userkey }}{% endfor %}
-
+{% for user in u2f_sudo_mappings %}
+{{ u2f_sudo_mappings[user].username }}{% for u2fkey in u2f_sudo_mappings[user].u2fkeys %}:{{ u2f_sudo_mappings[user]['u2fkeys'][u2fkey].keyhandle }},{{ u2f_sudo_mappings[user]['u2fkeys'][u2fkey].userkey }}{% endfor %}
 {% endfor %}
-{% endif %}
